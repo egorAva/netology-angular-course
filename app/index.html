@@ -3,8 +3,9 @@
 
     <head>
         <meta charset="utf-8">
-        <title>Шаг 6 / Фреймворк AngularJS / Нетология</title>
+        <title>Фреймворк AngularJS / Нетология</title>
         <script src="../libs/angular-1.5.3/angular.js"></script>
+        <script src="../libs/angular-1.5.3/angular-resource.js"></script>
     </head>
 
     <body ng-controller="BookListCtrl">
@@ -14,14 +15,17 @@
 
         Сортировать по:
         <select ng-model="orderProperty">
+            <option value="name">Имени</option>
             <option value="price">Цене</option>
             <option value="pages">Количеству страниц</option>
+            <option value="genre">Жанру</option>
         </select>
 
         <ul>
             <li ng-repeat="book in books | filter:query | orderBy:orderProperty">
                 <h3>{{book.name | uppercase}}</h3>
                 <p>{{book.author}}</p>
+                <p>Жанр: {{book.genre}}</p>
                 <p>Страниц:
                     {{book.pages}}, цена:
                     {{book.price}}</p>
@@ -33,9 +37,10 @@
             {{query}}
         </p>
 
-        <script src="js/step6/app.js"></script>
-        <script src="js/step6/controllers.js"></script>
-
+        <script src="js/app.js"></script>
+        <script src="js/services.js"></script>
+        <script src="js/controllers.js"></script>
+        
     </body>
 
 </html>

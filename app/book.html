@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html ng-app="BookApp">
+<head>
+  <meta charset="UTF-8">
+  <title>Книга</title>
+  <script src="../libs/angular-1.5.3/angular.js"></script>
+  <script src="../libs/angular-1.5.3/angular-resource.js"></script>
+</head>
+<body ng-controller="BookOne">
+  <div>
+    <h1>{{book.name}}</h1>
+    <ul>
+      <li>ID: {{book.id}}</li>
+      <li>Автор: {{book.author}}</li>
+      <li>Жанр: {{book.genre}}</li>
+      <li>Остаток: {{book.inStock ? 'Есть в наличии' : 'Нет в наличии'}}</li>
+      <li>Цена: {{book.price}}</li>
+      <li>Количество страниц: {{book.pages}}</li>
+    </ul>
+  </div>
+
+  <script src="js/app.js"></script>
+  <script src="js/controllers.js"></script>
+  <script src="js/services.js"></script>
+</body>
+</html>
